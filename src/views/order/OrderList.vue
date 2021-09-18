@@ -87,7 +87,7 @@ export default {
   },
   watch: {
     $route() {
-      this.loadData();
+      //this.loadData();
     }
   },
   methods: {
@@ -157,6 +157,7 @@ export default {
       }).then(({ data }) => {
         console.log(this.status);
         this.dataList = data.objects;
+        this.status = this.$route.params.status;
       });
     }
   },

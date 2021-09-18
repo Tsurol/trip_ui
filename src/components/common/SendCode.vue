@@ -39,7 +39,7 @@ export default {
       ajax
         .get(AccountsApis.sendCodeUrl, {
           params: {
-            phone: this.username
+            email: this.username
           }
         })
         .then(res => {
@@ -64,9 +64,9 @@ export default {
     },
     // 发送验证码
     sendcode() {
-      // 判断是否已输入手机号或邮箱
+      // 判断是否已输入邮箱
       if (!this.username) {
-        this.$notify("请输入手机号或邮箱");
+        this.$notify("请输入邮箱");
         return false;
       }
       this.isCodeSend = true;

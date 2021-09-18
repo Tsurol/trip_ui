@@ -2,7 +2,8 @@
  * 存放项目中所有的接口地址
  */
 
-const apiHost = "http://localhost:8080/api";
+// const apiHost = "http://localhost:8080/api";
+const apiHost = "/api";
 
 /**系统模块 */
 const SystemApis = {
@@ -35,7 +36,7 @@ const AccountsApis = {
   // 用户注册接口
   userRegisterUrl: apiHost + "/accounts/register/",
   // 发送验证码接口
-  sendCodeUrl: apiHost + "/accounts/sendcode/phone/",
+  sendCodeUrl: apiHost + "/accounts/sendcode/email/",
   // 用户个人信息接口
   userInfoUrl: apiHost + "/accounts/user/info/",
 };

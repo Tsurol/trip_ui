@@ -13,9 +13,9 @@
     <van-form>
       <van-field
         v-model="form.username"
-        name="手机号"
-        label="手机号"
-        placeholder="手机号"
+        name="邮箱"
+        label="邮箱"
+        placeholder="邮箱"
         clearable
         :rules="ruleUsername"
       />
@@ -113,11 +113,11 @@ export default {
           message: "两次密码输入不一致"
         }
       ],
-      // 手机号验证
+      // 邮箱验证
       ruleUsername: [
         {
-          pattern: /^1[3-9]\d{9}$/,
-          message: "请填写正确的手机号"
+          pattern: /^([a-zA-Z]|[0-9])(\w|\\-)+@[a-zA-Z0-9]+\.([a-zA-Z]{2,4})$/,
+          message: "请填写正确的邮箱"
         }
       ]
     };
@@ -130,7 +130,7 @@ export default {
       console.log(this.form);
       ajax
         .post(AccountsApis.userRegisterUrl, {
-          phone: this.form.username,
+          email: this.form.username,
           password: this.form.password,
           nickname: this.form.nickname,
           code: this.form.code
